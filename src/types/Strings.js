@@ -1,6 +1,6 @@
-export default class String {
+export default class Strings {
   constructor() {
-    this.schema = {};
+    this.checks = {};
   }
 
   isValid(validatedValue) {
@@ -13,7 +13,7 @@ export default class String {
     }
 
     let result = true;
-    for (const validFn of Object.values(this.schema)) {
+    for (const validFn of Object.values(this.checks)) {
       result = result && validFn(validatedValue);
     }
 
@@ -21,7 +21,7 @@ export default class String {
   }
 
   required() {
-    this.schema.required = (validatedValue) => {
+    this.checks.required = (validatedValue) => {
       return validatedValue ? true : false;
     };
 
@@ -29,7 +29,7 @@ export default class String {
   }
 
   contains(substring) {
-    this.schema.contains = (validatedValue) => {
+    this.checks.contains = (validatedValue) => {
       return validatedValue.includes(substring);
     };
 
@@ -37,7 +37,7 @@ export default class String {
   }
 
   minLength(num = 1) {
-    this.schema.minLength = (validatedValue) => {
+    this.checks.minLength = (validatedValue) => {
       return validatedValue.length >= num;
     };
 

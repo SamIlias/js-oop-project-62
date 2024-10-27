@@ -18,7 +18,7 @@ test("Default schema. Passes not a string", () => {
   expect(() => schema.isValid([])).toThrow();
 });
 
-test("Check method 'required' - Required not empty string", () => {
+test("Check method 'required' - Require not empty string", () => {
   const v = new Validator();
   const schema = v.string();
   schema.required();
