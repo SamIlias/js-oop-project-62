@@ -8,6 +8,15 @@ test("Default schema. Passes empty value", () => {
   expect(schema.isValid(NaN)).toBe(true);
 });
 
+test("Default schema. Passes not a number", () => {
+  const v = new Validator();
+  const schema = v.number();
+  expect(() => schema.isValid("")).toThrow();
+  expect(() => schema.isValid("19")).toThrow();
+  expect(() => schema.isValid({})).toThrow();
+  expect(() => schema.isValid([])).toThrow();
+});
+
 test("Check method 'required' - Require any number", () => {
   const v = new Validator();
   const schema = v.number();
