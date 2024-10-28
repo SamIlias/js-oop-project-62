@@ -1,6 +1,7 @@
 export default class Strings {
-  constructor() {
+  constructor(customStringValidators) {
     this.checks = {};
+    this.customValidators = customStringValidators;
   }
 
   isValid(validatedValue) {
@@ -18,6 +19,13 @@ export default class Strings {
     }
 
     return result;
+  }
+
+  test(name, ...params) {
+    this.checks[name] = (validatedValue) =>
+      this.customValidators[name](validatedValue, ...params);
+
+    return this;
   }
 
   required() {

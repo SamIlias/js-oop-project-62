@@ -1,7 +1,8 @@
 export default class Numbers {
-  constructor() {
+  constructor(customNumberValidators) {
     this.checks = {};
     this.falsy = [null, undefined, NaN];
+    this.customValidators = customNumberValidators;
   }
 
   isValid(validatedValue) {
@@ -19,6 +20,13 @@ export default class Numbers {
     }
 
     return result;
+  }
+
+  test(name, ...params) {
+    this.checks[name] = (validatedValue) =>
+      this.customValidators[name](validatedValue, ...params);
+
+    return this;
   }
 
   required() {
