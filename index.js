@@ -1,1 +1,1 @@
-console.log("Hello, Sam");
+export { Validator } from "./src/Validator";

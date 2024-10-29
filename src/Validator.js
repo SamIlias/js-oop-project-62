@@ -1,9 +1,9 @@
-import Strings from "./types/Strings.js";
-import Numbers from "./types/Numbers.js";
-import Arrays from "./types/Arrays.js";
-import Objects from "./types/Objects.js";
+import Strings from "./validationTypes/Strings.js";
+import Numbers from "./validationTypes/Numbers.js";
+import Arrays from "./validationTypes/Arrays.js";
+import Objects from "./validationTypes/Objects.js";
 
-export default class Validator {
+export class Validator {
   constructor() {
     this.customValidators = {
       string: {},

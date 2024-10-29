@@ -1,4 +1,4 @@
-import Validator from "../src/Validator.js";
+import { Validator } from "../index.js";
 
 test("Custom validator - String, startWith function", () => {
   const v = new Validator();
