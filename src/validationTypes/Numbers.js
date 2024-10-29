@@ -39,7 +39,11 @@ export default class Numbers {
 
   positive() {
     this.checks.positive = (validatedValue) => {
-      return this.falsy.includes(validatedValue) ? false : validatedValue > 0;
+      if (this.falsy.includes(validatedValue)) {
+        return true;
+      }
+      return validatedValue <= 0 ? false : true;
+      // return this.falsy.includes(validatedValue) ? false : validatedValue > 0;
     };
 
     return this;
