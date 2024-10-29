@@ -1,4 +1,4 @@
-import { Validator } from "../index.js";
+import Validator from "../index.js";
 
 test("Default schema. Passes empty value", () => {
   const v = new Validator();

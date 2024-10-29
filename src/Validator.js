@@ -3,7 +3,7 @@ import Numbers from "./validationTypes/Numbers.js";
 import Arrays from "./validationTypes/Arrays.js";
 import Objects from "./validationTypes/Objects.js";
 
-export class Validator {
+export default class Validator {
   constructor() {
     this.customValidators = {
       string: {},

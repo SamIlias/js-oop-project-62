@@ -1,4 +1,4 @@
-import { Validator } from "../index.js";
+import Validator from "../index.js";
 
 test("Check method 'shape' - all attributes must be satisfied", () => {
   const v = new Validator();
