@@ -6,9 +6,9 @@ export default class Arrays {
   isValid(validatedValue) {
     let result = true;
 
-    for (const [key, value] of Object.entries(this.checks)) {
+    Object.entries(this.checks).forEach(([key, value]) => {
       result = result && value.isValid(validatedValue[key]);
-    }
+    });
 
     return result;
   }

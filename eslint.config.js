@@ -1,11 +1,3 @@
-// import globals from "globals";
-// import pluginJs from "@eslint/js";
-
-// export default [
-//   {languageOptions: { globals: globals.browser }},
-//   pluginJs.configs.recommended,
-// ];
-
 import globals from "globals";
 
 import path from "path";
@@ -41,9 +33,14 @@ export default [
       ...importPlugin.configs.recommended.rules,
     },
   },
-  ...compat.extends("airbnb-base"),
+  ...compat.extends("airbnb-base", "prettier"),
   {
     rules: {
+      "operator-linebreak": [
+        "error",
+        "before",
+        { overrides: { "&&": "before" } },
+      ],
       "no-underscore-dangle": [
         "error",
         {

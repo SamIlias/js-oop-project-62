@@ -5,9 +5,9 @@ export default class Arrays {
 
   isValid(validatedValue) {
     if (
-      !Array.isArray(validatedValue) &&
-      validatedValue !== undefined &&
-      validatedValue !== null
+      !Array.isArray(validatedValue)
+      && validatedValue !== undefined
+      && validatedValue !== null
     ) {
       throw new Error(
         `Expected array, but something else was received: ${typeof validatedValue}`
@@ -15,25 +15,22 @@ export default class Arrays {
     }
 
     let result = true;
-    for (const validFn of Object.values(this.checks)) {
+    Object.values(this.checks).forEach((validFn) => {
       result = result && validFn(validatedValue);
-    }
+    });
 
     return result;
   }
 
   required() {
-    this.checks.required = (validatedValue) => {
-      return Array.isArray(validatedValue);
-    };
+    this.checks.required = (validatedValue) => Array.isArray(validatedValue);
 
     return this;
   }
 
   sizeof(num) {
-    this.checks.sizeof = (validatedValue) => {
-      return validatedValue ? validatedValue.length === num : false;
-    };
+    this.checks.sizeof = (validatedValue) =>
+      validatedValue ? validatedValue.length === num : false;
 
     return this;
   }

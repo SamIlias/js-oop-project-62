@@ -1,6 +1,6 @@
-import Validator from "../index.js";
+import Validator from '../index.js';
 
-test("Default schema. Passes empty value", () => {
+test('Default schema. Passes empty value', () => {
   const v = new Validator();
   const schema = v.number();
   expect(schema.isValid(null)).toBe(true);
@@ -8,11 +8,11 @@ test("Default schema. Passes empty value", () => {
   expect(schema.isValid(NaN)).toBe(true);
 });
 
-test("Default schema. Passes not a number", () => {
+test('Default schema. Passes not a number', () => {
   const v = new Validator();
   const schema = v.number();
-  expect(() => schema.isValid("")).toThrow();
-  expect(() => schema.isValid("19")).toThrow();
+  expect(() => schema.isValid('')).toThrow();
+  expect(() => schema.isValid('19')).toThrow();
   expect(() => schema.isValid({})).toThrow();
   expect(() => schema.isValid([])).toThrow();
 });
@@ -39,6 +39,7 @@ test("Check method 'positive' - Must be positive", () => {
   expect(schema.isValid(null)).toBe(true);
   expect(schema.isValid(undefined)).toBe(true);
   expect(schema.isValid(NaN)).toBe(true);
+  //If you want positive method not allow to pass null, undefind and NaN just use strings below instead of the above ones
   // expect(schema.isValid(null)).toBe(false);
   // expect(schema.isValid(undefined)).toBe(false);
   // expect(schema.isValid(NaN)).toBe(false);
@@ -58,7 +59,7 @@ test("Check method 'range' - Must be in range", () => {
   expect(schema.isValid(NaN)).toBe(false);
 });
 
-test("Check complex", () => {
+test('Check complex', () => {
   const v = new Validator();
   const schema = v.number();
   schema.positive().range(-5, 5);

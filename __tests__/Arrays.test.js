@@ -1,16 +1,16 @@
-import Validator from "../index.js";
+import Validator from '../index.js';
 
-test("Default schema. Passes empty value", () => {
+test('Default schema. Passes empty value', () => {
   const v = new Validator();
   const schema = v.array();
   expect(schema.isValid(null)).toBe(true);
   expect(schema.isValid(undefined)).toBe(true);
 });
 
-test("Default schema. Passes not an array", () => {
-  const v = new Validator();
+test('Default schema. Passes not an array', () => {
+   const v = new Validator();
   const schema = v.array();
-  expect(() => schema.isValid("")).toThrow();
+  expect(() => schema.isValid('')).toThrow();
   expect(() => schema.isValid(999)).toThrow();
   expect(() => schema.isValid({})).toThrow();
   expect(() => schema.isValid(0)).toThrow();

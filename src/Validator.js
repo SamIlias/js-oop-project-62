@@ -1,7 +1,7 @@
-import Strings from "./validationTypes/Strings.js";
-import Numbers from "./validationTypes/Numbers.js";
-import Arrays from "./validationTypes/Arrays.js";
-import Objects from "./validationTypes/Objects.js";
+import Strings from './validationTypes/Strings.js';
+import Numbers from './validationTypes/Numbers.js';
+import Arrays from './validationTypes/Arrays.js';
+import Objects from './validationTypes/Objects.js';
 
 export default class Validator {
   constructor() {
@@ -20,11 +20,11 @@ export default class Validator {
   }
 
   array() {
-    return new Arrays();
+    return new Arrays(this.customValidators.array);
   }
 
   object() {
-    return new Objects();
+    return new Objects(this.customValidators.object);
   }
 
   addValidator(type, name, fn) {
