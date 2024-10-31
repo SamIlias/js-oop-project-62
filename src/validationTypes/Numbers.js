@@ -40,7 +40,7 @@ export default class Numbers {
         return true;
       }
       return !(validatedValue <= 0);
-      // If you want positive method not allow to pass null, 
+      // If you want positive method not allow to pass null,
       // undefind and NaN just use strings below instead of the above ones
       // return this.falsy.includes(validatedValue) ? false : validatedValue > 0;
     };

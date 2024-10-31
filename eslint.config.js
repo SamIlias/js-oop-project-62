@@ -73,6 +73,7 @@ export default [
           ignoreUrls: true, // игнорировать длину строк для URL
         },
       ],
+      'no-trailing-spaces': 'error', // запрещает пробелы в конце строк
       'comma-dangle': [
         'error',
         {

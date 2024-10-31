@@ -10,7 +10,7 @@ export default class Arrays {
       && validatedValue !== null
     ) {
       throw new Error(
-        `Expected array, but something else was received: ${typeof validatedValue}`
+        `Expected array, but something else was received: ${typeof validatedValue}`,
       );
     }
 
@@ -29,7 +29,7 @@ export default class Arrays {
   }
 
   sizeof(num) {
-    this.checks.sizeof = (validatedValue) => (validatedValue ? validatedValue.length === num 
+    this.checks.sizeof = (validatedValue) => (validatedValue ? validatedValue.length === num
       : false);
 
     return this;
