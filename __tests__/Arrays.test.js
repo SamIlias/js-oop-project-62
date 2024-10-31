@@ -8,7 +8,7 @@ test('Default schema. Passes empty value', () => {
 });
 
 test('Default schema. Passes not an array', () => {
-   const v = new Validator();
+  const v = new Validator();
   const schema = v.array();
   expect(() => schema.isValid('')).toThrow();
   expect(() => schema.isValid(999)).toThrow();
@@ -17,7 +17,7 @@ test('Default schema. Passes not an array', () => {
   expect(() => schema.isValid(NaN)).toThrow();
 });
 
-test("Check method 'required' - Require array", () => {
+test('Check method \'required\' - Require array', () => {
   const v = new Validator();
   const schema = v.array();
   schema.required();
@@ -29,7 +29,7 @@ test("Check method 'required' - Require array", () => {
   expect(schema.isValid([1, 2, 4])).toBe(true);
 });
 
-test("Check method 'sizeof' - Sets required size of an array", () => {
+test('Check method \'sizeof\' - Sets required size of an array', () => {
   const v = new Validator();
   const schema = v.array();
   schema.sizeof(2);

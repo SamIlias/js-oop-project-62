@@ -17,7 +17,7 @@ test('Default schema. Passes not a number', () => {
   expect(() => schema.isValid([])).toThrow();
 });
 
-test("Check method 'required' - Require any number", () => {
+test('Check method \'required\' - Require any number', () => {
   const v = new Validator();
   const schema = v.number();
   schema.required();
@@ -29,7 +29,7 @@ test("Check method 'required' - Require any number", () => {
   expect(schema.isValid(9)).toBe(true);
 });
 
-test("Check method 'positive' - Must be positive", () => {
+test('Check method \'positive\' - Must be positive', () => {
   const v = new Validator();
   const schema = v.number();
 
@@ -39,13 +39,14 @@ test("Check method 'positive' - Must be positive", () => {
   expect(schema.isValid(null)).toBe(true);
   expect(schema.isValid(undefined)).toBe(true);
   expect(schema.isValid(NaN)).toBe(true);
-  //If you want positive method not allow to pass null, undefind and NaN just use strings below instead of the above ones
+  // If you want positive method not allow to pass null,
+  // undefind and NaN just use strings below instead of the above ones
   // expect(schema.isValid(null)).toBe(false);
   // expect(schema.isValid(undefined)).toBe(false);
   // expect(schema.isValid(NaN)).toBe(false);
 });
 
-test("Check method 'range' - Must be in range", () => {
+test('Check method \'range\' - Must be in range', () => {
   const v = new Validator();
   const schema = v.number();
   schema.range(-5, 5);

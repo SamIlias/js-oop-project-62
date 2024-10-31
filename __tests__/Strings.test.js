@@ -18,7 +18,7 @@ test('Default schema. Passes not a string', () => {
   expect(() => schema.isValid([])).toThrow();
 });
 
-test("Check method 'required' - Require not empty string", () => {
+test('Check method \'required\' - Require not empty string', () => {
   const v = new Validator();
   const schema = v.string();
   schema.required();
@@ -29,7 +29,7 @@ test("Check method 'required' - Require not empty string", () => {
   expect(schema.isValid(undefined)).toBe(false);
 });
 
-test("Check method 'contains' - Must contain a substring", () => {
+test('Check method \'contains\' - Must contain a substring', () => {
   const v = new Validator();
   const schema = v.string();
 
@@ -51,7 +51,7 @@ test("Check method 'contains' - Must contain a substring", () => {
   expect(schema.isValid('why does the fox say')).toBe(false);
 });
 
-test("Check method 'minLength' - Length must be greater than minLength", () => {
+test('Check method \'minLength\' - Length must be greater than minLength', () => {
   const v = new Validator();
   const schema = v.string();
   schema.minLength(10).minLength(6);

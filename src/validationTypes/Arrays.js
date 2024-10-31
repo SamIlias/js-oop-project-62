@@ -29,8 +29,8 @@ export default class Arrays {
   }
 
   sizeof(num) {
-    this.checks.sizeof = (validatedValue) =>
-      validatedValue ? validatedValue.length === num : false;
+    this.checks.sizeof = (validatedValue) => (validatedValue ? validatedValue.length === num 
+      : false);
 
     return this;
   }

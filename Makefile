@@ -2,10 +2,10 @@ install:
 	npm ci
 
 lint:
-	npx eslint ./src
+	npx eslint .
 
 lint-fix:
-	npx eslint ./src --fix
+	npx eslint . --fix
 
 test:
 	node --experimental-vm-modules node_modules/jest/bin/jest.js
